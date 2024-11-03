@@ -32,7 +32,7 @@ export default function CardList() {
 
     return (
         <>
-            {
+            { posts && posts.map &&
                 posts.map((post) => (
                     <>
                         <Card
