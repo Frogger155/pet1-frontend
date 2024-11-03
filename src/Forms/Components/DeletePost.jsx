@@ -11,7 +11,7 @@ export default function DeletePost() {
             'Authorization': `JWT ${localStorage.getItem("access_token")}`
 
         };
-        response = axios.delete(`${API_BASE_URL}/posts/` + post["id"] + "/delete/", { headers })
+        response = axios.delete(`${API_BASE_URL}posts/` + post["id"] + "/delete/", { headers })
             .then(
                 console.log("Deleted")
             )

@@ -17,7 +17,7 @@ export default function CardList() {
 
     useEffect(() => {
         console.log(option)
-        axios.get(`${API_BASE_URL}posts/${option}/`)
+        axios.get(`${API_BASE_URL}posts/` + option + "/")
             .then(function (response) {
                 console.log("Request done")
                 console.log(response)

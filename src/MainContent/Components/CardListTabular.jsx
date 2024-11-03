@@ -8,7 +8,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 export default function CardListTabular() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/posts/logged-user/`,
+    axios.get(`${API_BASE_URL}posts/logged-user/`,
       {
         headers: {
           'Authorization': `JWT ${localStorage.getItem("access_token")}`,

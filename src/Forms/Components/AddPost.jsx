@@ -84,7 +84,7 @@ export default function AddPost() {
         tagsList.map(tag_obj => {
             form.append('tags', tag_obj.name)
         })
-        const { response } = axios.post(`${API_BASE_URL}/posts/add/`,
+        const { response } = axios.post(`${API_BASE_URL}posts/add/`,
             form,
             {
                 headers: {

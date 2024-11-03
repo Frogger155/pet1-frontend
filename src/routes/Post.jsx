@@ -3,7 +3,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 async function getPost(post_id) {
     try {
-        const response = await axios.get(`${API_BASE_URL}/posts/` + post_id, {
+        const response = await axios.get(`${API_BASE_URL}posts/` + post_id, {
             headers: {
                 'Authorization': `JWT ${localStorage.getItem("access_token")}`,
             }

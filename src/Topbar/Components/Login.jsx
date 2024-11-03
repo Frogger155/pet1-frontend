@@ -24,7 +24,7 @@ export default function Login() {
   const [backendError, setBackendError] = useState("")
 
   const onSubmit = data => {
-    axios.post(`${API_BASE_URL}/user-managment/token/`, {
+    axios.post(`${API_BASE_URL}user-managment/token/`, {
       username: data["username"],
       password: data["password"],
     })

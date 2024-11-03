@@ -15,7 +15,7 @@ export default function CardListWithGivenTag() {
     const tag_name = useLoaderData()
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/posts/with-tag/` + tag_name + '/')
+        axios.get(`${API_BASE_URL}posts/with-tag/` + tag_name + '/')
             .then(function (response) {
                 console.log(response)
                 setPosts(response.data)
