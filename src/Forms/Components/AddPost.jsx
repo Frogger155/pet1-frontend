@@ -6,6 +6,7 @@ import * as yup from "yup"
 import { CurrentUserContext } from '../../CurrentUserContext'
 import axios from 'axios'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 let tag_id = 0
 
@@ -83,7 +84,7 @@ export default function AddPost() {
         tagsList.map(tag_obj => {
             form.append('tags', tag_obj.name)
         })
-        const { response } = axios.post('http://localhost:8000/posts/add/',
+        const { response } = axios.post(`${API_BASE_URL}/posts/add/`,
             form,
             {
                 headers: {

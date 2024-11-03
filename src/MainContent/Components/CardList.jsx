@@ -3,6 +3,8 @@ import Card from "./Card";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 export async function loader({ params }) {
     console.log(params)
     return params.option
@@ -15,7 +17,7 @@ export default function CardList() {
 
     useEffect(() => {
         console.log(option)
-        axios.get('http://localhost:8000/posts/' + option)
+        axios.get(`${API_BASE_URL}posts/${option}/`)
             .then(function (response) {
                 console.log("Request done")
                 console.log(response)

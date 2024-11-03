@@ -9,6 +9,8 @@ import { useLoaderData } from 'react-router-dom'
 
 let tag_id = 0
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 export default function EditPost() {
     let id = 1
     const post = useLoaderData()
@@ -92,7 +94,7 @@ export default function EditPost() {
         })
 
 
-        const { response } = axios.patch('http://localhost:8000/posts/' + post["id"] + "/",
+        const { response } = axios.patch(`${API_BASE_URL}posts/` + post["id"] + "/",
             form,
             {
                 headers: {

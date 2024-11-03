@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { useLoaderData } from 'react-router-dom'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 export default function DeletePost() {
     const post = useLoaderData()
     const onConfirmPressed = () => {
@@ -9,7 +11,7 @@ export default function DeletePost() {
             'Authorization': `JWT ${localStorage.getItem("access_token")}`
 
         };
-        response = axios.delete('http://localhost:8000/posts/' + post["id"] + "/delete/", { headers })
+        response = axios.delete(`${API_BASE_URL}/posts/` + post["id"] + "/delete/", { headers })
             .then(
                 console.log("Deleted")
             )

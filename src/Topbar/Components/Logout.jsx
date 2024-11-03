@@ -3,6 +3,8 @@ import { CurrentUserContext } from '../../CurrentUserContext'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 export default function Logout() {
   const { user, updateUser } = useContext(CurrentUserContext)
   const navigate = useNavigate()

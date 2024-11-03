@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 export default function CardListTabular() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:8000/posts/logged-user/',
+    axios.get(`${API_BASE_URL}/posts/logged-user/`,
       {
         headers: {
           'Authorization': `JWT ${localStorage.getItem("access_token")}`,

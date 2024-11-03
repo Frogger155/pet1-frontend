@@ -3,6 +3,8 @@ import Card from "./Card";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 export async function loader({ params }) {
     return params.tag_name
 }
@@ -13,7 +15,7 @@ export default function CardListWithGivenTag() {
     const tag_name = useLoaderData()
 
     useEffect(() => {
-        axios.get('http://localhost:8000/posts/with-tag/' + tag_name + '/')
+        axios.get(`${API_BASE_URL}/posts/with-tag/` + tag_name + '/')
             .then(function (response) {
                 console.log(response)
                 setPosts(response.data)

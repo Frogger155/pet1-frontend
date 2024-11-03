@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { CurrentUserContext } from '../../CurrentUserContext'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 
 export default function Login() {
   const { currentUser, updateUser } = useContext(CurrentUserContext)
@@ -22,7 +24,7 @@ export default function Login() {
   const [backendError, setBackendError] = useState("")
 
   const onSubmit = data => {
-    axios.post('http://localhost:8000/user-managment/token/', {
+    axios.post(`${API_BASE_URL}/user-managment/token/`, {
       username: data["username"],
       password: data["password"],
     })

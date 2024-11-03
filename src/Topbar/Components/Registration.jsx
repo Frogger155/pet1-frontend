@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../axios.config'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 export default function Registration() {
   const [isRegSuccessful, setIsRegSuccessful] = useState(false)
   const {
@@ -17,7 +19,7 @@ export default function Registration() {
 
   const onSubmit = data => {
     axiosInstance
-      .post('user-managment/create/', {
+      .post('/user-managment/create/', {
         username: data["username"],
         password1: data["password1"],
         password2: data["password2"]
